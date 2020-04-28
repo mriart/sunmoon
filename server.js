@@ -1,6 +1,6 @@
 const http = require('http');
-const hostname = '127.0.0.1';
-const port = 3000;
+const hostname = '0.0.0.0';
+const port = 8080;
 
 var sc = require('suncalc');
 var lat = 41.591158899999996;
@@ -17,7 +17,7 @@ const server = http.createServer((req, res) => {
   var moonPhase = moon.phase;
   moonPhase = Math.round(moonPhase * 100)/100;
 
-  resStr = "Sun Rise = " + sunRise + "\nSun Down = " + sunDown;
+  resStr = "Sun Rise = " + sunRise +" UTC" + "\nSun Down = " + sunDown +" UTC";
   resStr = resStr + "\n\nMoon Ilumination [0-1] = " + moonFrac + "\nMoon Phase [0:new, 0.5:full, 0.99:new] = " + moonPhase;
 
   res.statusCode = 200;
@@ -26,5 +26,5 @@ const server = http.createServer((req, res) => {
 });
 
 server.listen(port, hostname, () => {
-  console.log('Server running at localhost, port 3000');
+  console.log('Server running at localhost, port 8080');
 });

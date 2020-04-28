@@ -1,0 +1,13 @@
+{
+  "name": "sunmoon",
+  "version": "1.0.0",
+  "description": "Node.js on Docker for sunmoon calculations",
+  "author": "Marc Riart <marc_riart@es.ibm.com>",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "suncalc": "^1.8.0"
+  }
+}

@@ -23,9 +23,9 @@ const server = http.createServer((req, res) => {
 
   delta = (times.sunrise.getTime() - (timesYest.sunrise.getTime() + 24*3600*1000))/1000;
   resStr = "Sun Rise = " + sunRise +" UTC (+2)" + "\nSun Down = " + sunDown +" UTC (+2)";
+  resStr = resStr + "\nDelta since yesterday in s = " + delta;
   resStr = resStr + "\n\nMoon Ilumination [0-1] = " + moonFrac + "\nMoon Phase [0:new, 0.5:full, 0.99:new] = " + moonPhase;
-  resStr = resStr + "\n" + delta;
-
+  
   res.statusCode = 200;
   res.setHeader('Content-Type', 'text/plain');
   res.end(resStr);

@@ -1,0 +1,13 @@
+{
+  "name": "sun",
+  "version": "1.0.0",
+  "description": "Node.js on Docker for sun calculations",
+  "author": "Marc Riart <marc_riart@es.ibm.com>",
+  "main": "sun.js",
+  "scripts": {
+    "start": "node sun.js"
+  },
+  "dependencies": {
+    "suncalc": "^1.8.0"
+  }
+}

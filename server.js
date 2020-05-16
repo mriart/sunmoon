@@ -30,8 +30,8 @@ const server = http.createServer((req, res) => {
   resStr = resStr + "\n\nMoon Ilumination [0-1] = " + moonFrac + "\nMoon Phase [0:new, 0.5:full, 0.99:new] = " + moonPhase;
 
   var moonPos = sc.getMoonPosition(date, lat, lon);
-  resStr = resStr + "\nMoon Position Altitude in rad [0:horizon, PI/2:zenith] = " + Math.round(moonPos.altitude *100) /100;
-  resStr = resStr + "\nMoon Position Azimuth in rad [0:south, PI/2:west] = " + Math.round(moonPos.azimuth *100) /100;;  
+  resStr = resStr + "\nMoon Altitude in rad [0:horizon, PI/2:zenith] = " + Math.round((moonPos.altitude/Math.PI)*100)/100 + " PI";
+  resStr = resStr + "\nMoon Azimuth in rad [0:south, PI/2:west] = " + Math.round((moonPos.azimuth/Math.PI)*100)/100 + " PI";
   
   res.statusCode = 200;
   res.setHeader('Content-Type', 'text/plain');
